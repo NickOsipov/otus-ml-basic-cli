@@ -16,11 +16,11 @@ class LinearModel:
         Коэффициент наклона линии.
     intercept : Union[int, float]
         Свободный член (пересечение с осью Y).
-    
+
     Methods
     -------
     predict(values: List[Union[int, float]]) -> List[Union[int, float]]
-        Предсказывает выходные значения для заданного списка входных значений.    
+        Предсказывает выходные значения для заданного списка входных значений.
     """
 
     def __init__(self, weight: Union[int, float] = 1, intercept: Union[int, float] = 0):

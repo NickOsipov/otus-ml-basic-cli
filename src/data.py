@@ -6,6 +6,7 @@ Description: Модуль для работы с данными.
 from typing import List, Union
 import csv
 
+
 def read_data(file_path: str) -> List[Union[int, float]]:
     """
     Функция читает данные из файла CSV
@@ -14,7 +15,7 @@ def read_data(file_path: str) -> List[Union[int, float]]:
     ----------
     file_path : str
         Путь к файлу CSV для чтения данных.
-    
+
     Returns
     -------
     List[Union[int, float]]
@@ -51,7 +52,7 @@ def write_data(file_path: str, data: List[Union[int, float]]) -> None:
     None
     """
 
-    with open(file_path, mode="w", encoding="utf-8", newline='') as file:
+    with open(file_path, mode="w", encoding="utf-8", newline="") as file:
         csv_writer = csv.writer(file)
         for value in data:
             csv_writer.writerow([value])
