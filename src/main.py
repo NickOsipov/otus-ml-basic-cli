@@ -6,6 +6,8 @@ Description: Простой пайплайн для чтения данных, �
 from argparse import ArgumentParser
 import os
 
+from loguru import logger
+
 from src.data import read_data, write_data
 from src.model import LinearModel
 
@@ -14,6 +16,10 @@ def main() -> None:
     """
     Основная функция для выполнения пайплайна.
     """
+
+    logger.info(f"Старт скрипта {__file__}")
+    logger.info("Создание аргументов командной строки")
+
     # Создание аргументов командной строки
     parser = ArgumentParser(description="Простой пайплайн для линейной модели.")
     parser.add_argument(
@@ -50,18 +56,25 @@ def main() -> None:
     # Пути к файлам
     input_file = os.path.join("data", "input", input_filename)
     output_file = os.path.join("data", "output", output_filename)
+
     # Чтение данных
+    logger.info(f"Чтение данных из файла: {input_file}")
     data = read_data(input_file)
 
     # Инициализация модели
+    logger.info("Инициализация линейной модели")
+    logger.debug(f"Параметры модели: weight={weight}, intercept={intercept}")
     model = LinearModel(weight=weight, intercept=intercept)
 
     # Предсказание результатов
+    logger.info("Выполнение предсказаний")
     predictions = model.predict(data)
 
     # Запись результатов
+    logger.info(f"Запись результатов в файл: {output_file}")
     write_data(output_file, predictions)
 
+    logger.info("Завершение работы скрипта")
 
 if __name__ == "__main__":
     main()
