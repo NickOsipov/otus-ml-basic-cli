@@ -4,4 +4,10 @@ version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
 requires-python = "==3.11.4"
-dependencies = []
+dependencies = [
+    "black==25.11.0",
+    "ipykernel==7.1.0",
+    "pylint==4.0.3",
+    "pytest==9.0.1",
+    "pytest-cov==7.0.0",
+]
