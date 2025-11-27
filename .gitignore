@@ -19,3 +19,6 @@ coverage*
 .mypy_cache/
 .pytest_cache/
 *.coverage
+data/**/*.csv
+!data/input/.gitkeep
+!data/output/.gitkeep

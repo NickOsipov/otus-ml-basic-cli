@@ -9,6 +9,16 @@ import csv
 def read_data(file_path: str) -> List[Union[int, float]]:
     """
     Функция читает данные из файла CSV
+
+    Parameters
+    ----------
+    file_path : str
+        Путь к файлу CSV для чтения данных.
+    
+    Returns
+    -------
+    List[Union[int, float]]
+        Список числовых значений, прочитанных из файла.
     """
 
     result = []
@@ -28,6 +38,17 @@ def read_data(file_path: str) -> List[Union[int, float]]:
 def write_data(file_path: str, data: List[Union[int, float]]) -> None:
     """
     Функция записывает данные в файл CSV
+
+    Parameters
+    ----------
+    file_path : str
+        Путь к файлу CSV для записи данных.
+    data : List[Union[int, float]]
+        Список числовых значений для записи в файл.
+
+    Returns
+    -------
+    None
     """
 
     with open(file_path, mode="w", encoding="utf-8", newline='') as file:
